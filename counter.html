@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        #ak{
+            display: flex;
+        }
+        #ak1, #ak2, #ak3{
+            margin-left: 2em;
+            padding: 2em;
+        }
+      </style>
+    </head>
+
+    <body>
+        <div id="ak">
+            <div class="counter-container" id="ak1">
+             <i class="fas fa-tasks fa3x"></i>
+             <div class="counter" data-target="500"></div>
+             <span>OnGoing Project</span>
+            </div>
+       
+       
+            <div class="counter-container" id="ak2">
+             <i class="fas fa-tasks fa3x"></i>
+             <div class="counter" data-target="15000"></div>
+             <span>Happy Clients</span>
+            </div>
+       
+       
+       
+            <div class="counter-container" id="ak3">
+             <i class="fas fa-tasks fa3x"></i>
+             <div class="counter" data-target="500"></div>
+             <span>Project Completed</span>
+            </div>
+            </div>
+
+    
+          
+
+    </body>
+
+    <script>
+     let counter= document.querySelectorAll('.counter');
+     counter.forEach((counter)=>{
+        counter.innerHTML=0;
+        let update=()=>{
+            let count=counter.getAttribute('data-target');
+            let startCount=Number(counter.innerHTML);
+            let inc=count/100;
+            
+
+             if(startCount<count){
+                 counter.innerHTML=`${startCount+inc}`;
+                 setTimeout(update,10);
+             }
+             else{count.innerHTML=count}
+         }
+         update();
+        
+     })
+     
+    </script>
+
+    
+</html>
+
+
